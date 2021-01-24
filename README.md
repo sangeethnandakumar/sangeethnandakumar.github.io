@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Proper WebAPI Pattern
 
-You can use the [editor on GitHub](https://github.com/sangeethnandakumar/sangeethnandakumar.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Steps to scafold an efficient and organised way for WebAPIs
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
