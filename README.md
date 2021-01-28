@@ -233,8 +233,8 @@ For login endpoint, Use the JWT token generator
 For multi one to one dependency cases, Configure the relationships using ForginKeys.
 For Entities, Specify the props like this
 ```csharp
-        public DateTime? UserCreatedOn { get; set; }
-        public DateTime? UserUpdatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public DateTime? UpdatedOn { get; set; }
 
         [ForeignKey("UserCreatedBy")]
         public User CreatedBy { get; set; }
