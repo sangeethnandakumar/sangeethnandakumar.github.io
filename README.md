@@ -228,3 +228,30 @@ For login endpoint, Use the JWT token generator
             return tokenHandler.WriteToken(token);
         }
 ```
+
+### Configure Entity Relationships
+For multi one to one dependency cases, Configure the relationships using ForginKeys.
+For Entities, Specify the props like this
+```csharp
+        public DateTime? UserCreatedOn { get; set; }
+        public DateTime? UserUpdatedOn { get; set; }
+
+        [ForeignKey("UserCreatedBy")]
+        public User CreatedBy { get; set; }
+
+        [ForeignKey("UserUpdatedBy")]
+        public User UpdatedBy { get; set; }
+```
+And bind relationships like this
+```csharp
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            //User
+            modelBuilder.Entity<User>().HasOne(a => a.CreatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<User>().HasOne(a => a.UpdatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
+            //Project
+            modelBuilder.Entity<Project>().HasOne(a => a.CreatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Project>().HasOne(a => a.UpdatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
+        }
+```
