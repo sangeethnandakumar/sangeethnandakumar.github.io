@@ -235,10 +235,8 @@ For Entities, Specify the props like this
 ```csharp
         public DateTime? CreatedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }
-
         [ForeignKey("UserCreatedBy")]
         public User CreatedBy { get; set; }
-
         [ForeignKey("UserUpdatedBy")]
         public User UpdatedBy { get; set; }
 ```
