@@ -249,10 +249,10 @@ And bind relationships like this
         {
             base.OnModelCreating(modelBuilder);
             //User
-            modelBuilder.Entity<User>().HasOne(a => a.CreatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<User>().HasOne(a => a.UpdatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<User>().HasOne(a => a.CreatedBy).WithMany().OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<User>().HasOne(a => a.UpdatedBy).WithMany().OnDelete(DeleteBehavior.SetNull);
             //Project
-            modelBuilder.Entity<Project>().HasOne(a => a.CreatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<Project>().HasOne(a => a.UpdatedBy).WithOne().OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Project>().HasOne(a => a.CreatedBy).WithMany().OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<Project>().HasOne(a => a.UpdatedBy).WithMany().OnDelete(DeleteBehavior.SetNull);
         }
 ```
