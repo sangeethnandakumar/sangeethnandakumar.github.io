@@ -17,7 +17,7 @@ texture:
   tagline: "Developer. Open Source"
   date_format: "%b %-d, %Y"
   style: blue
-  showNav: false
+  showNav: true
   showPicker: false
 
   # generate social links in footer
