@@ -1,24 +1,20 @@
 ---
 layout: page
 ---
-{%- if site.posts.size > 0 -%}
+
 <ul class="posts">
-	{%- for post in site.posts -%}
 	<li>
-		{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 		<div class="post-meta">
 			<a class="post-link" href="{{ post.url | relative_url }}">
-				<h2 class="post-title">{{ post.title | escape }}</h2>
+				<h2 class="post-title">Twileloop.Timezone</h2>
 			</a>
-			<div class="post-date"><i class="icon-calendar"></i>{{ post.date | date: date_format }}</div>
+			<div class="post-date">
+				<i class="icon-calendar"></i>
+				May 23, 2019
+			</div>
 		</div>
 		<div class="post">
-			{%- if site.show_excerpts -%}
-			{{ post.excerpt }}
-			{%- endif -%}
+			An easy to use utility to easily convert timezones from any timezones, countries, offsets, short and long names etc.. while leveraging the powerfull NodaTime and globaliazation in the background.
 		</div>
 	</li>
-	{%- endfor -%}
 </ul>
-{%- endif -%}
-
