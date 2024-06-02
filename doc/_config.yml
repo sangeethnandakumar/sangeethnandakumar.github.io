@@ -16,7 +16,7 @@ texture:
   title: Sangeeth Nandakumar
   tagline: "Developer. Open Source"
   date_format: "%b %-d, %Y"
-  style: black
+  style: blue
   showNav: false
   showPicker: false
 
